@@ -36,7 +36,7 @@ imagechooser：图像选择、拍照框架
 
 ##License
 ```
-Copyright (C) 2016 xhb_199409@163.com
+Copyright (C) 2016 myzcxhh@live.cn
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
