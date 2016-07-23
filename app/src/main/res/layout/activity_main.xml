@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context="com.kongzue.find.MainActivity">
+
+    <LinearLayout
+        android:id="@+id/sys_statusBar"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:orientation="vertical"
+        android:background="#e1e0c1"
+        android:visibility="gone">
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/img_main_bkg_nosign"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:background="#eff3f5" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/img_main_bkg"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/img_main_bkg" />
+
+    <HorizontalScrollView
+        android:id="@+id/tab_scroll"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignTop="@+id/tab_content_pager"
+        android:layout_alignBottom="@+id/relativeLayout">
+
+        <LinearLayout
+            android:id="@+id/tab_bar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone">
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/tab_content_pager"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:flipInterval="500"
+        android:persistentDrawingCache="animation"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/relativeLayout">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/linearLayout">
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:id="@+id/img_main_nav_love"
+                android:src="@drawable/ic_main_nav_love"
+                android:layout_weight="1"
+                android:layout_margin="13dp" />
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:id="@+id/img_main_nav_home"
+                android:src="@drawable/ic_main_nav_home"
+                android:layout_weight="1"
+                android:layout_margin="13dp" />
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:id="@+id/img_main_nav_message"
+                android:src="@drawable/ic_main_nav_msg"
+                android:layout_weight="1"
+                android:layout_margin="13dp" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/img_main_nav_tab"
+            android:src="@drawable/ic_main_nav_tab"
+            android:layout_below="@+id/linearLayout"
+            android:layout_alignLeft="@+id/linearLayout"
+            android:layout_alignStart="@+id/linearLayout"
+            android:layout_marginLeft="6dp"
+            android:layout_marginBottom="-2dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/box_main_menu_bkg"
+        android:layout_below="@+id/sys_statusBar"
+        android:clickable="true"
+        android:visibility="gone">
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/img_main_menu_bkg"
+        android:id="@+id/box_main_menu"
+        android:layout_below="@+id/sys_statusBar"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="-15dp"
+        android:layout_marginRight="-20dp"
+        android:clickable="true"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="未登录"
+            android:id="@+id/txt_main_menu_usernick"
+            android:textColor="#365486"
+            android:textSize="18dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_toLeftOf="@+id/img_main_menu_userface"
+            android:layout_toStartOf="@+id/img_main_menu_userface"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="15dp"
+            android:clickable="true" />
+
+        <ListView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/list_main_menu_listview"
+            android:layout_below="@+id/txt_main_menu_usernick"
+            tools:listitem="@layout/item_main_menu"
+            android:scrollbars="none"
+            android:overScrollMode="never"
+            android:divider="@null"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="8dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:id="@+id/img_main_menu_userface"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:padding="4dp"
+            android:layout_marginTop="-4dp"
+            android:layout_marginRight="1dp"
+            android:clickable="true"
+            fresco:failureImage="@drawable/ic_main_user_noface"
+            fresco:placeholderImage="@drawable/ic_main_user_noface"
+            fresco:roundAsCircle="true" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/box_main_login"
+        android:background="#54000000"
+        android:clickable="true"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:clickable="true">
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/linearLayout2">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="18dp">
+
+                <ImageView
+                    android:layout_width="43dp"
+                    android:layout_height="43dp"
+                    android:id="@+id/img_main_login_titleImage"
+                    android:src="@drawable/ic_main_user_noface"
+                    android:layout_marginLeft="10dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="立即登录或注册 "
+                    android:id="@+id/txt_main_login_title"
+                    android:textColor="#000000"
+                    android:textSize="21dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/img_main_login_titleImage"
+                    android:layout_toEndOf="@+id/img_main_login_titleImage"
+                    android:layout_marginLeft="24dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txt_main_login_info"
+                    android:textSize="13dp"
+                    android:visibility="visible"
+                    android:text="请输入手机号，然后登录或注册"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginLeft="25dp" />
+            </RelativeLayout>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/edit_login_login_phone"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:inputType="phone"
+                android:hint="输入您的手机号"
+                android:textSize="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/edit_main_login_password"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:inputType="textPassword"
+                android:hint="输入您的密码"
+                android:textSize="16dp"
+                android:layout_marginBottom="5dp" />
+
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/box_main_regist"
+                android:visibility="gone">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/edit_main_regist_userNick"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:hint="输入您的昵称"
+                    android:textSize="16dp"
+                    android:layout_marginBottom="5dp" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="10dp">
+
+                    <EditText
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/edit_main_regist_code"
+                        android:layout_gravity="center_horizontal"
+                        android:inputType="number"
+                        android:hint="输入验证码"
+                        android:textSize="16dp"
+                        android:layout_weight="1" />
+
+                    <Button
+                        android:layout_width="110dp"
+                        android:layout_height="42dp"
+                        android:text="获取验证码"
+                        android:id="@+id/btn_main_regist_getCode"
+                        android:background="@drawable/ripple_bg"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true"
+                        android:textColor="#009688"
+                        android:layout_marginTop="-5dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="4dp">
+
+                <Button
+                    android:layout_width="70dp"
+                    android:layout_height="38dp"
+                    android:text="用户协议"
+                    android:id="@+id/btn_main_userAgreement"
+                    android:background="@drawable/ripple_bg"
+                    android:textColor="#009688"
+                    android:textSize="15dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginLeft="18dp" />
+
+                <Button
+                    android:layout_width="70dp"
+                    android:layout_height="38dp"
+                    android:text="忘记密码"
+                    android:id="@+id/btn_main_login_forgetPsd"
+                    android:background="@drawable/ripple_bg"
+                    android:textColor="#009688"
+                    android:textSize="15dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/btn_main_userAgreement"
+                    android:layout_toEndOf="@+id/btn_main_userAgreement"
+                    android:layout_marginLeft="5dp"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:text="登录"
+            android:id="@+id/btn_main_login_loginButton"
+            android:background="@drawable/img_login_regist"
+            android:textColor="#00000000"
+            android:textSize="15dp"
+            android:layout_below="@+id/linearLayout2"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="-55dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:id="@+id/imageView"
+            android:layout_below="@+id/linearLayout2"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/img_box_shadow"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/box_main_delete_worditem"
+        android:background="#54000000"
+        android:clickable="true"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"
+            android:background="@drawable/img_dialog_bkg"
+            android:clickable="true">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="删除确认 "
+                        android:id="@+id/txt_main_delete_worditem_title"
+                        android:textColor="#000000"
+                        android:textSize="18dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20dp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txt_main_delete_worditem_info"
+                        android:textSize="13dp"
+                        android:visibility="visible"
+                        android:text="您确定删除正在匹配的兴趣词[Word]吗？"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginLeft="15dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txt_main_delete_worditem_word"
+                        android:layout_alignParentTop="true"
+                        android:layout_toRightOf="@+id/txt_main_delete_worditem_info"
+                        android:layout_toEndOf="@+id/txt_main_delete_worditem_info"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="20dp">
+
+                    <Button
+                        android:layout_width="60dp"
+                        android:layout_height="38dp"
+                        android:text="确定"
+                        android:id="@+id/btn_main_delete_worditem_ok"
+                        android:background="@drawable/ripple_bg"
+                        android:textColor="#2196f3"
+                        android:textSize="15dp"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginRight="10dp" />
+
+                    <Button
+                        android:layout_width="60dp"
+                        android:layout_height="38dp"
+                        android:text="取消"
+                        android:id="@+id/btn_main_delete_worditem_no"
+                        android:background="@drawable/ripple_bg"
+                        android:textColor="#009688"
+                        android:textSize="15dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_toLeftOf="@+id/btn_main_delete_worditem_ok"
+                        android:layout_toStartOf="@+id/btn_main_delete_worditem_ok"
+                        android:layout_marginRight="5dp" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

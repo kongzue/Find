@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:id="@+id/sys_statusBar_message"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:orientation="vertical"
+        android:visibility="gone">
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/sys_statusBar_message">
+
+
+        <ImageView
+            android:id="@+id/img_main_msgpage_title"
+            android:layout_width="70dp"
+            android:layout_height="32dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="12dp"
+            android:padding="4dp"
+            android:src="@drawable/img_message_title"
+            android:textColor="#2c3b52"
+            android:textSize="24dp"
+            android:layout_marginBottom="2dp" />
+
+        <com.kongzue.find.util.BounceScrollView
+            android:id="@+id/main_msg_scrollView"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_below="@+id/img_main_msgpage_title"
+            android:layout_marginBottom="62dp"
+            android:layout_marginTop="10dp"
+            android:divider="@null"
+            android:overScrollMode="never"
+            android:scrollbars="none"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/box_main_msg_box"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_below="@+id/txt_main_msg_title_chating"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginRight="15dp"
+                            android:background="@drawable/img_main_listview_bkg"
+                            android:visibility="visible">
+
+                            <ListView
+                                android:id="@+id/list_main_msg_chatlist"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:divider="@null"
+                                android:overScrollMode="never"
+                                android:scrollbars="none"
+                                tools:listitem="@layout/item_main_listview_message" />
+                        </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/txt_main_msg_title_chating"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="5dp"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:text="我的消息"
+                            android:textColor="#355385" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/box_main_finding_box"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone">
+
+                        <RelativeLayout
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_below="@+id/txt_main_msg_title_finding"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginRight="15dp"
+                            android:layout_marginTop="5dp"
+                            android:background="@drawable/img_main_listview_bkg">
+
+                            <ListView
+                                android:id="@+id/list_main_msg_findlist"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:divider="@null"
+                                android:overScrollMode="never"
+                                android:scrollbars="none"
+                                android:visibility="visible"
+                                tools:listitem="@layout/item_main_listview_word" />
+                        </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/txt_main_msg_title_finding"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="10dp"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:text="正在寻找"
+                            android:textColor="#355385"
+                            android:visibility="visible" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </RelativeLayout>
+        </com.kongzue.find.util.BounceScrollView>
+
+        <ImageView
+            android:id="@+id/img_main_message_error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:paddingBottom="50dp"
+            android:src="@drawable/img_main_message_nologin"
+            android:visibility="visible" />
+
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

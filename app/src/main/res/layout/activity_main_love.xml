@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/img_main_lovepage_title"
+        android:layout_width="100dp"
+        android:layout_height="32dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="12dp"
+        android:padding="4dp"
+        android:src="@drawable/img_hot_title"
+        android:textColor="#2c3b52"
+        android:textSize="24dp"
+        android:layout_marginBottom="2dp"
+        android:visibility="gone" />
+
+    <com.kongzue.find.util.BounceScrollView
+        android:id="@+id/main_hot_scrollView"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/img_main_lovepage_title"
+        android:layout_marginBottom="62dp"
+        android:divider="@null"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        android:visibility="visible">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:id="@+id/box_binner">
+
+                    <include layout="@layout/banner"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/box_main_hot"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@+id/txt_main_hot_title"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:background="@drawable/img_main_listview_bkg">
+
+                        <ListView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/list_main_hot_listview"
+                            android:divider="@null"
+                            android:overScrollMode="never"
+                            android:scrollbars="none"
+                            tools:listitem="@layout/item_main_listview_word" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/txt_main_hot_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:text="热门排行"
+                        android:textColor="#355385" />
+                </RelativeLayout>
+            </LinearLayout>
+
+
+        </RelativeLayout>
+    </com.kongzue.find.util.BounceScrollView>
+
+
+    <ImageView
+        android:id="@+id/img_main_find_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:paddingBottom="50dp"
+        android:src="@drawable/img_main_find_nologin"
+        android:visibility="gone" />
+</RelativeLayout>

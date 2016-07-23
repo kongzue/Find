@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/sys_statusBar_home"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:orientation="vertical"
+        android:visibility="gone">
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/sys_statusBar_home">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:id="@+id/box_main_home_bkg"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:visibility="visible">
+
+        </RelativeLayout>
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:id="@+id/img_main_pagehome_userface"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:padding="4dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="4dp"
+            fresco:placeholderImage="@drawable/ic_main_user_noface"
+            fresco:failureImage="@drawable/ic_main_user_noface"
+            fresco:roundAsCircle="true"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:id="@+id/img_main_home_logo"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/img_main_logo"
+            android:layout_marginTop="150dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="46dp"
+            android:id="@+id/txt_main_home_searchbox"
+            android:layout_below="@+id/img_main_home_logo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="44dp"
+            android:gravity="center"
+            android:background="@drawable/img_home_searchbox_bkg"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:hint="输入词语，寻找志趣相投的人"
+            android:textColorHint="#2f000000"
+            android:textSize="17dp"
+            android:clickable="true"
+            android:textColor="#000000"
+            android:singleLine="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="猜我喜欢的"
+            android:id="@+id/txt_main_home_guess"
+            android:textColor="#853622b8"
+            android:textSize="14dp"
+            android:layout_alignTop="@+id/txt_main_home_searchbox"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="70dp"
+            android:visibility="gone"/>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/img_main_searchbox_bkg"
+            android:layout_below="@+id/edit_main_home_searchbox"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="0dp"
+            android:id="@+id/box_main_home_suggestList"
+            android:visibility="gone">
+
+            <ListView
+                tools:listitem="@layout/item_main_listview_suggest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/list_main_home_searchSuggest_listview"
+                android:scrollbars="none"
+                android:overScrollMode="never"
+                android:visibility="visible"
+                android:dividerHeight="0.1dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_alignBottom="@+id/list_main_home_searchSuggest_listview"
+                android:layout_centerHorizontal="true"
+                android:background="#ffffff"
+                android:layout_marginBottom="1dp"></RelativeLayout>
+
+        </RelativeLayout>
+
+
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="46dp"
+            android:id="@+id/edit_main_home_searchbox"
+            android:gravity="center"
+            android:background="@drawable/img_home_searchbox_bkg"
+            android:hint="输入词语，寻找志趣相投的人"
+            android:textColorHint="#2f000000"
+            android:singleLine="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:visibility="gone"
+            android:textColor="#000000"
+            android:textIsSelectable="false"
+            android:textSize="17dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/img_main_home_searchSuggest_bkg"
+            android:background="#ffffff"
+            android:layout_marginLeft="2.5dp"
+            android:layout_marginRight="2.5dp"
+            android:visibility="gone" />
+
+        <ImageView
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:id="@+id/img_main_home_searchButton"
+            android:src="@drawable/img_main_home_start_search"
+            android:clickable="true"
+            android:visibility="gone"
+            android:padding="12dp"
+            android:alpha="0.8"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="260dp" />
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

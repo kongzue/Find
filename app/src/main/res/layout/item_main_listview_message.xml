@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="66dp">
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="0.2dp"
+        android:background="#18000000"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="65dp"
+        android:id="@+id/img_main_list_line" />
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:id="@+id/img_main_msg_userFace"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="10dp"
+        fresco:placeholderImage="@drawable/ic_main_user_noface"
+        fresco:roundAsCircle="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="名字"
+        android:id="@+id/txt_main_msg_userNick"
+        android:textSize="18dp"
+        android:textColor="#8d57a5"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/txt_main_msg_message"
+        android:layout_alignStart="@+id/txt_main_msg_message"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_main_msg_message"
+        android:layout_below="@+id/txt_main_msg_userNick"
+        android:layout_toRightOf="@+id/img_main_msg_userFace"
+        android:layout_toEndOf="@+id/img_main_msg_userFace"
+        android:singleLine="true"
+        android:layout_marginTop="4dp"
+        android:textSize="13dp"
+        android:hint="暂无消息"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_main_msg_word"
+        android:textSize="13dp"
+        android:textColor="#8d57a5"
+        android:text="兴趣词"
+        android:textColorHint="#38000000"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="14dp"
+        android:layout_marginRight="15dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_main_msg_userName"
+        android:visibility="gone" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_main_msg_time"
+        android:visibility="gone" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="13dp"
+        android:textColor="#8d57a5"
+        android:text="#"
+        android:textColorHint="#38000000"
+        android:layout_alignTop="@+id/txt_main_msg_word"
+        android:layout_toLeftOf="@+id/txt_main_msg_word"
+        android:layout_toStartOf="@+id/txt_main_msg_word" />
+
+</RelativeLayout>

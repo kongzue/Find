@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.kongzue.find.ActActivity"
+    android:background="#eff3f5">
+
+
+
+    <LinearLayout
+        android:id="@+id/sys_statusBar"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:orientation="vertical"
+        android:visibility="gone">
+    </LinearLayout>
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:layout_width="fill_parent"
+        android:layout_height="200dp"
+        android:id="@+id/img_actPhoto"
+        android:clickable="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:visibility="visible"
+        android:layout_below="@+id/sys_statusBar">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="#Title"
+            android:id="@+id/txt_actTitle"
+            android:textSize="26dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="20dp"
+            android:textColor="#ffffff"
+            android:shadowColor="#5c000000"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="10" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="#abstract"
+            android:id="@+id/txt_actAbstract"
+            android:textSize="12dp"
+            android:textColor="#ffffff"
+            android:shadowColor="#5c000000"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="10"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="55dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="#words"
+            android:id="@+id/txt_actWords"
+            android:layout_below="@+id/txt_actAbstract"
+            android:layout_alignRight="@+id/txt_actAbstract"
+            android:layout_alignEnd="@+id/txt_actAbstract"
+            android:layout_marginTop="94dp"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/img_actPhoto"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-20dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/img_main_listview_bkg"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_below="@+id/txt_listTitle"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="5dp">
+
+            <ListView
+                tools:listitem="@layout/item_main_listview_word"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/list_abstractWords"
+                android:divider="@null"
+                android:overScrollMode="never"
+                android:scrollbars="none" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/txt_listTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:focusable="false"
+            android:text="相关查找"
+            android:textColor="#355385"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="10dp"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+</RelativeLayout>

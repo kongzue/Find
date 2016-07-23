@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:background="#ffffff">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:id="@+id/img_chat_message_left_userface"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        fresco:placeholderImage="@drawable/ic_main_user_noface"
+        fresco:roundAsCircle="true"
+        android:visibility="visible"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="15dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:id="@+id/txt_chat_message_left_username"
+        android:visibility="gone" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hi,我是Kongzue"
+        android:id="@+id/txt_chat_message_left_usernick"
+        android:layout_alignTop="@+id/img_chat_message_left_userface"
+        android:layout_toRightOf="@+id/img_chat_message_left_userface"
+        android:layout_toEndOf="@+id/img_chat_message_left_userface"
+        android:textSize="16dp"
+        android:layout_marginTop="4dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="我也对 #外星人 感兴趣"
+        android:id="@+id/txt_chat_message_left_word"
+        android:layout_below="@+id/txt_chat_message_left_usernick"
+        android:layout_toRightOf="@+id/img_chat_message_left_userface"
+        android:layout_toEndOf="@+id/img_chat_message_left_userface"
+        android:layout_marginTop="2dp" />
+
+</RelativeLayout>
